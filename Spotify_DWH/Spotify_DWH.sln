@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36212.18 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "Spotify_DWH", "Spotify_DWH.dtproj", "{3F38A0A9-58A4-C08D-41EA-CB04915D6B06}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F38A0A9-58A4-C08D-41EA-CB04915D6B06}.Development|Default.ActiveCfg = Development
+		{3F38A0A9-58A4-C08D-41EA-CB04915D6B06}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3EFF21C6-5508-41A9-A248-E2E16C7DFF55}
+	EndGlobalSection
+EndGlobal

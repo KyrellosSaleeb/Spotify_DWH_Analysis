@@ -1,0 +1,529 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1200,
+  "model": {
+    "culture": "en-GB",
+    "dataSources": [
+      {
+        "name": "SqlServer DESKTOP-7TQNV83MSSQLSERVER01 DWH_Spotify",
+        "connectionString": "Provider=SQLOLEDB;Data Source=DESKTOP-7TQNV83\\MSSQLSERVER01;Integrated Security=SSPI;Persist Security Info=false;Initial Catalog=DWH_Spotify",
+        "impersonationMode": "impersonateAccount",
+        "account": "kyrellos",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "DimMusicTheory",
+        "columns": [
+          {
+            "name": "music_theory_id",
+            "dataType": "int64",
+            "sourceColumn": "music_theory_id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "key_category",
+            "dataType": "string",
+            "sourceColumn": "key_category",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "mode",
+            "dataType": "string",
+            "sourceColumn": "mode",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "time_signature",
+            "dataType": "string",
+            "sourceColumn": "time_signature",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimMusicTheory",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimMusicTheory].*   FROM [dbo].[DimMusicTheory] ",
+              "dataSource": "SqlServer DESKTOP-7TQNV83MSSQLSERVER01 DWH_Spotify"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimMusicTheory].*   FROM [dbo].[DimMusicTheory] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimMusicTheory"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "DimTrack",
+        "columns": [
+          {
+            "name": "track_id",
+            "dataType": "int64",
+            "sourceColumn": "track_id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "track_name",
+            "dataType": "string",
+            "sourceColumn": "track_name",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "artist_name",
+            "dataType": "string",
+            "sourceColumn": "artist_name",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimTrack",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimTrack].*   FROM [dbo].[DimTrack] ",
+              "dataSource": "SqlServer DESKTOP-7TQNV83MSSQLSERVER01 DWH_Spotify"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimTrack].*   FROM [dbo].[DimTrack] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimTrack"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "FactSpotifyTrack",
+        "columns": [
+          {
+            "name": "fact_id",
+            "dataType": "int64",
+            "sourceColumn": "fact_id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "track_id",
+            "dataType": "int64",
+            "sourceColumn": "track_id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "genre_id",
+            "dataType": "int64",
+            "sourceColumn": "genre_id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "music_theory_id",
+            "dataType": "int64",
+            "sourceColumn": "music_theory_id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "popularity",
+            "dataType": "double",
+            "sourceColumn": "popularity",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "acousticness",
+            "dataType": "double",
+            "sourceColumn": "acousticness",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "danceability",
+            "dataType": "double",
+            "sourceColumn": "danceability",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "duration_min",
+            "dataType": "double",
+            "sourceColumn": "duration_min",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "energy",
+            "dataType": "double",
+            "sourceColumn": "energy",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "instrumentalness",
+            "dataType": "double",
+            "sourceColumn": "instrumentalness",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "liveness",
+            "dataType": "double",
+            "sourceColumn": "liveness",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "speechiness",
+            "dataType": "double",
+            "sourceColumn": "speechiness",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "valence",
+            "dataType": "double",
+            "sourceColumn": "valence",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "tempo",
+            "dataType": "double",
+            "sourceColumn": "tempo",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "loudness",
+            "dataType": "double",
+            "sourceColumn": "loudness",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "time_signature_confidence",
+            "dataType": "double",
+            "sourceColumn": "time_signature_confidence",
+            "sourceProviderType": "Double"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FactSpotifyTrack",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[FactSpotifyTrack].*   FROM [dbo].[FactSpotifyTrack] ",
+              "dataSource": "SqlServer DESKTOP-7TQNV83MSSQLSERVER01 DWH_Spotify"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Total Tracks",
+            "expression": " COUNTROWS(FactSpotifyTrack)"
+          },
+          {
+            "name": "Average Popularity",
+            "expression": " AVERAGE(FactSpotifyTrack[popularity])"
+          },
+          {
+            "name": "Average Duration (Min)",
+            "expression": " AVERAGE(FactSpotifyTrack[duration_min])"
+          },
+          {
+            "name": "Average Energy",
+            "expression": " AVERAGE(FactSpotifyTrack[energy])"
+          },
+          {
+            "name": "Average Acousticness",
+            "expression": "  AVERAGE(FactSpotifyTrack[acousticness])"
+          },
+          {
+            "name": "Average Danceability",
+            "expression": "  AVERAGE(FactSpotifyTrack[danceability])"
+          },
+          {
+            "name": "Average Instrumentalness",
+            "expression": " AVERAGE(FactSpotifyTrack[instrumentalness])"
+          },
+          {
+            "name": "Average Valence",
+            "expression": " AVERAGE(FactSpotifyTrack[valence])"
+          },
+          {
+            "name": "Average Loudness",
+            "expression": " AVERAGE(FactSpotifyTrack[loudness])"
+          },
+          {
+            "name": "Average Tempo",
+            "expression": " AVERAGE(FactSpotifyTrack[tempo])"
+          },
+          {
+            "name": "Average Liveness",
+            "expression": " AVERAGE(FactSpotifyTrack[liveness])"
+          },
+          {
+            "name": "Average Speechiness",
+            "expression": " AVERAGE(FactSpotifyTrack[speechiness])"
+          },
+          {
+            "name": "Time Signature Confidence (Avg)",
+            "expression": " AVERAGE(FactSpotifyTrack[time_signature_confidence])"
+          },
+          {
+            "name": "DanceableEnergeticTracks",
+            "expression": " CALCULATE(COUNTROWS(FactSpotifyTrack), FactSpotifyTrack[danceability] > 0.7 && FactSpotifyTrack[energy] > 0.7)"
+          },
+          {
+            "name": "HighlyInstrumentalTracks",
+            "expression": " CALCULATE(COUNTROWS(FactSpotifyTrack), FactSpotifyTrack[instrumentalness] > 0.8)"
+          },
+          {
+            "name": "MostPopularTrack",
+            "expression": " MAX(FactSpotifyTrack[popularity])"
+          },
+          {
+            "name": "LeastPopularTrack",
+            "expression": " MIN(FactSpotifyTrack[popularity])"
+          },
+          {
+            "name": "TrackWithMaxValence",
+            "expression": " MAX(FactSpotifyTrack[valence])"
+          },
+          {
+            "name": "TrackWithMaxDanceability",
+            "expression": " MAX(FactSpotifyTrack[danceability])"
+          },
+          {
+            "name": "FastTracks",
+            "expression": " CALCULATE(COUNTROWS(FactSpotifyTrack), FactSpotifyTrack[tempo] > 120)"
+          },
+          {
+            "name": "ShortTracks",
+            "expression": " CALCULATE(COUNTROWS(FactSpotifyTrack), FactSpotifyTrack[duration_min] < 3)"
+          },
+          {
+            "name": "LongTracks",
+            "expression": " CALCULATE(COUNTROWS(FactSpotifyTrack), FactSpotifyTrack[duration_min] > 5)"
+          },
+          {
+            "name": "Total Artists",
+            "expression": " DISTINCTCOUNT(DimTrack[artist_name])"
+          },
+          {
+            "name": "Total Track IDs",
+            "expression": " COUNTROWS(DimTrack)"
+          },
+          {
+            "name": "Total Genres",
+            "expression": " DISTINCTCOUNT(DimGenre[genre])"
+          },
+          {
+            "name": "Total Music Theory Combinations",
+            "expression": " DISTINCTCOUNT(DimMusicTheory[music_theory_id])"
+          },
+          {
+            "name": "Tracks Over 5 Min",
+            "expression": " COUNTROWS(FILTER(FactSpotifyTrack, FactSpotifyTrack[duration_min] > 5))"
+          },
+          {
+            "name": "Average Tracks per Artist",
+            "expression": " DIVIDE(COUNTROWS(FactSpotifyTrack), DISTINCTCOUNT(DimTrack[artist_name]))"
+          },
+          {
+            "name": "Artists with Multiple Tracks",
+            "expression": "  COUNTROWS(FILTER(SUMMARIZE(DimTrack, DimTrack[artist_name]), COUNTROWS(RELATEDTABLE(FactSpotifyTrack)) > 1))"
+          },
+          {
+            "name": "High Energy Tracks",
+            "expression": [
+              " ",
+              "COUNTROWS(FILTER(FactSpotifyTrack, FactSpotifyTrack[energy] > 0.8))"
+            ]
+          },
+          {
+            "name": "Very Danceable Tracks",
+            "expression": [
+              " ",
+              "COUNTROWS(FILTER(FactSpotifyTrack, FactSpotifyTrack[danceability] > 0.9))"
+            ]
+          },
+          {
+            "name": "Popular Instrumentals",
+            "expression": [
+              " ",
+              "COUNTROWS(FILTER(FactSpotifyTrack, ",
+              "    FactSpotifyTrack[instrumentalness] > 0.7 && FactSpotifyTrack[popularity] > 50))"
+            ]
+          },
+          {
+            "name": "Major Mode %",
+            "expression": " DIVIDE(COUNTROWS(FILTER(FactSpotifyTrack, RELATED(DimMusicTheory[mode]) = \"MAJOR\")),COUNTROWS(FactSpotifyTrack))"
+          },
+          {
+            "name": "Average Time Signature Confidence",
+            "expression": " AVERAGE(FactSpotifyTrack[time_signature_confidence])"
+          },
+          {
+            "name": "Energy %",
+            "expression": " DIVIDE(AVERAGE(FactSpotifyTrack[energy]), CALCULATE(MAX(FactSpotifyTrack[energy]), ALL(FactSpotifyTrack))) "
+          },
+          {
+            "name": "Popularity %",
+            "expression": [
+              "  ",
+              "DIVIDE(",
+              "    MAX(FactSpotifyTrack[popularity]),",
+              "    CALCULATE(MAX(FactSpotifyTrack[popularity]), ALL(FactSpotifyTrack))",
+              ") "
+            ]
+          },
+          {
+            "name": "Average Popularity per Artist",
+            "expression": " AVERAGEX(VALUES(DimTrack[artist_name]), CALCULATE(AVERAGE(FactSpotifyTrack[popularity])))"
+          },
+          {
+            "name": "Artists by Genre",
+            "expression": " CALCULATE(DISTINCTCOUNT(DimTrack[artist_name]), USERELATIONSHIP(FactSpotifyTrack[track_id], DimTrack[track_id]))"
+          },
+          {
+            "name": "Tracks by Artist",
+            "expression": " COUNTROWS(VALUES(DimTrack[track_name]))"
+          },
+          {
+            "name": "Danceability %",
+            "expression": " DIVIDE(AVERAGE(FactSpotifyTrack[danceability]), CALCULATE(MAX(FactSpotifyTrack[danceability]), ALL(FactSpotifyTrack))) * 100"
+          },
+          {
+            "name": "Valence %",
+            "expression": " DIVIDE(AVERAGE(FactSpotifyTrack[valence]), CALCULATE(MAX(FactSpotifyTrack[valence]), ALL(FactSpotifyTrack))) * 100"
+          },
+          {
+            "name": "Tempo %",
+            "expression": " DIVIDE(AVERAGE(FactSpotifyTrack[tempo]), CALCULATE(MAX(FactSpotifyTrack[tempo]), ALL(FactSpotifyTrack))) * 100"
+          },
+          {
+            "name": "Acousticness %",
+            "expression": " DIVIDE(AVERAGE(FactSpotifyTrack[acousticness]), CALCULATE(MAX(FactSpotifyTrack[acousticness]), ALL(FactSpotifyTrack))) * 100"
+          },
+          {
+            "name": "Instrumentalness %",
+            "expression": " DIVIDE(AVERAGE(FactSpotifyTrack[instrumentalness]), CALCULATE(MAX(FactSpotifyTrack[instrumentalness]), ALL(FactSpotifyTrack))) * 100"
+          },
+          {
+            "name": "Popular Tracks",
+            "expression": " COUNTROWS(FILTER(FactSpotifyTrack, FactSpotifyTrack[popularity] >= 60))"
+          },
+          {
+            "name": "Less Popular Tracks",
+            "expression": " COUNTROWS(FILTER(FactSpotifyTrack, FactSpotifyTrack[popularity] < 60))"
+          },
+          {
+            "name": "Genres Over 100 Tracks",
+            "expression": " CALCULATE(DISTINCTCOUNT(DimGenre[genre]), FILTER(VALUES(DimGenre[genre]), CALCULATE(COUNTROWS(FactSpotifyTrack)) > 100))"
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[FactSpotifyTrack].*   FROM [dbo].[FactSpotifyTrack] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "FactSpotifyTrack"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "DimGenre",
+        "columns": [
+          {
+            "name": "genre_id",
+            "dataType": "int64",
+            "sourceColumn": "genre_id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "genre",
+            "dataType": "string",
+            "sourceColumn": "genre",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimGenre",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimGenre].*   FROM [dbo].[DimGenre] ",
+              "dataSource": "SqlServer DESKTOP-7TQNV83MSSQLSERVER01 DWH_Spotify"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimGenre].*   FROM [dbo].[DimGenre] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimGenre"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "84b5524a-8bb3-4c93-968e-7fc3d4eb8adf",
+        "fromTable": "FactSpotifyTrack",
+        "fromColumn": "music_theory_id",
+        "toTable": "DimMusicTheory",
+        "toColumn": "music_theory_id"
+      },
+      {
+        "name": "17b84106-f2ff-4062-9d05-dcc623cfa417",
+        "fromTable": "FactSpotifyTrack",
+        "fromColumn": "track_id",
+        "toTable": "DimTrack",
+        "toColumn": "track_id"
+      },
+      {
+        "name": "ef44acb6-7622-4374-b988-19178810b901",
+        "fromTable": "FactSpotifyTrack",
+        "fromColumn": "genre_id",
+        "toTable": "DimGenre",
+        "toColumn": "genre_id"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}

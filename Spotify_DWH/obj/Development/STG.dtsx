@@ -1,0 +1,2564 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/19/2025 10:07:12 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-7TQNV83"
+  DTS:CreatorName="DESKTOP-7TQNV83\kyrellos"
+  DTS:DTSID="{A559EB4E-9E45-402E-BB2E-5E0D18B2D683}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="51"
+  DTS:VersionGUID="{10A045A0-1A5E-428B-9CD1-12700F085437}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{2D1F845B-ED57-42F7-8541-7027C098BC0F}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\DimGenre"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{F424F5AA-223E-4690-9645-4BE29B13F0A9}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimGenre"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\DimGenre\DimGenre"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="DimGenre"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[DimGenre]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\DimGenre\DimGenre.Connections[OleDbConnection]"
+                      connectionManagerID="{AD9B1787-F8B7-4982-93D0-9F04E02AC879}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-7TQNV83_MSSQLSERVER01.STG_Spotify]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\DimGenre\DimGenre.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\DimGenre\DimGenre.Inputs[OLE DB Destination Input].Columns[genre]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="genre"
+                          externalMetadataColumnId="Package\Sequence Container\DimGenre\DimGenre.Inputs[OLE DB Destination Input].ExternalColumns[genre]"
+                          lineageId="Package\Sequence Container\DimGenre\OLE DB Source.Outputs[OLE DB Source Output].Columns[genre]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\DimGenre\DimGenre.Inputs[OLE DB Destination Input].ExternalColumns[genre_id]"
+                          dataType="i4"
+                          name="genre_id" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\DimGenre\DimGenre.Inputs[OLE DB Destination Input].ExternalColumns[genre]"
+                          dataType="wstr"
+                          length="50"
+                          name="genre" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\DimGenre\DimGenre.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\DimGenre\DimGenre.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\DimGenre\DimGenre.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\DimGenre\DimGenre.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\DimGenre\DimGenre.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\DimGenre\DimGenre.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\DimGenre\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[ODS_Spotify]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT 
+  REPLACE(LTRIM(RTRIM(genre)), '’', '''') AS genre
+FROM dbo.ODS_Spotify;</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\DimGenre\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{875BBFC5-ADBD-4979-BEBF-47B563605726}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-7TQNV83_MSSQLSERVER01.ODS_Spotify]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\DimGenre\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\DimGenre\OLE DB Source.Outputs[OLE DB Source Output].Columns[genre]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\DimGenre\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[genre]"
+                          length="50"
+                          lineageId="Package\Sequence Container\DimGenre\OLE DB Source.Outputs[OLE DB Source Output].Columns[genre]"
+                          name="genre"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\DimGenre\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[genre]"
+                          dataType="wstr"
+                          length="4000"
+                          name="genre" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\DimGenre\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\DimGenre\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[genre]"
+                          dataType="wstr"
+                          length="4000"
+                          lineageId="Package\Sequence Container\DimGenre\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[genre]"
+                          name="genre" />
+                        <outputColumn
+                          refId="Package\Sequence Container\DimGenre\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\DimGenre\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\DimGenre\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\DimGenre\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\DimGenre.Paths[OLE DB Source Output]"
+                  endId="Package\Sequence Container\DimGenre\DimGenre.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Sequence Container\DimGenre\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\DimMusicTheory"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{9578186f-08ea-4c6c-8175-6681abf81a52}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimMusicTheory"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\DimMusicTheory\DimMusicTheory"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="DimMusicTheory"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[DimMusicTheory]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\DimMusicTheory\DimMusicTheory.Connections[OleDbConnection]"
+                      connectionManagerID="{AD9B1787-F8B7-4982-93D0-9F04E02AC879}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-7TQNV83_MSSQLSERVER01.STG_Spotify]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\DimMusicTheory\DimMusicTheory.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\DimMusicTheory\DimMusicTheory.Inputs[OLE DB Destination Input].Columns[mode]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="mode"
+                          externalMetadataColumnId="Package\Sequence Container\DimMusicTheory\DimMusicTheory.Inputs[OLE DB Destination Input].ExternalColumns[mode]"
+                          lineageId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Output].Columns[mode]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\DimMusicTheory\DimMusicTheory.Inputs[OLE DB Destination Input].Columns[key_track]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="key_track"
+                          externalMetadataColumnId="Package\Sequence Container\DimMusicTheory\DimMusicTheory.Inputs[OLE DB Destination Input].ExternalColumns[key_category]"
+                          lineageId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_track]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\DimMusicTheory\DimMusicTheory.Inputs[OLE DB Destination Input].Columns[time_signature_correct]"
+                          cachedDataType="wstr"
+                          cachedLength="3"
+                          cachedName="time_signature_correct"
+                          externalMetadataColumnId="Package\Sequence Container\DimMusicTheory\DimMusicTheory.Inputs[OLE DB Destination Input].ExternalColumns[time_signature]"
+                          lineageId="Package\Sequence Container\DimMusicTheory\Transform time_signature.Outputs[Derived Column Output].Columns[time_signature_correct]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\DimMusicTheory\DimMusicTheory.Inputs[OLE DB Destination Input].ExternalColumns[music_theory_id]"
+                          dataType="i4"
+                          name="music_theory_id" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\DimMusicTheory\DimMusicTheory.Inputs[OLE DB Destination Input].ExternalColumns[key_category]"
+                          dataType="wstr"
+                          length="50"
+                          name="key_category" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\DimMusicTheory\DimMusicTheory.Inputs[OLE DB Destination Input].ExternalColumns[mode]"
+                          dataType="wstr"
+                          length="10"
+                          name="mode" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\DimMusicTheory\DimMusicTheory.Inputs[OLE DB Destination Input].ExternalColumns[time_signature]"
+                          dataType="wstr"
+                          length="6"
+                          name="time_signature" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\DimMusicTheory\DimMusicTheory.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\DimMusicTheory\DimMusicTheory.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\DimMusicTheory\DimMusicTheory.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\DimMusicTheory\DimMusicTheory.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\DimMusicTheory\DimMusicTheory.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\DimMusicTheory\DimMusicTheory.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\DimMusicTheory\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[ODS_Spotify]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT
+    key_track,
+    mode,
+    time_signature
+FROM
+    dbo.ODS_Spotify;</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{875BBFC5-ADBD-4979-BEBF-47B563605726}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-7TQNV83_MSSQLSERVER01.ODS_Spotify]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_track]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[key_track]"
+                          length="2"
+                          lineageId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_track]"
+                          name="key_track"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Output].Columns[mode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[mode]"
+                          length="10"
+                          lineageId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Output].Columns[mode]"
+                          name="mode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Output].Columns[time_signature]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[time_signature]"
+                          length="6"
+                          lineageId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Output].Columns[time_signature]"
+                          name="time_signature"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[key_track]"
+                          dataType="wstr"
+                          length="2"
+                          name="key_track" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[mode]"
+                          dataType="wstr"
+                          length="10"
+                          name="mode" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[time_signature]"
+                          dataType="wstr"
+                          length="6"
+                          name="time_signature" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[key_track]"
+                          dataType="wstr"
+                          length="2"
+                          lineageId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[key_track]"
+                          name="key_track" />
+                        <outputColumn
+                          refId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[mode]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[mode]"
+                          name="mode" />
+                        <outputColumn
+                          refId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[time_signature]"
+                          dataType="wstr"
+                          length="6"
+                          lineageId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[time_signature]"
+                          name="time_signature" />
+                        <outputColumn
+                          refId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\DimMusicTheory\Transform time_signature"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Transform time_signature"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\DimMusicTheory\Transform time_signature.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\DimMusicTheory\Transform time_signature.Inputs[Derived Column Input].Columns[time_signature]"
+                          cachedDataType="wstr"
+                          cachedLength="6"
+                          cachedName="time_signature"
+                          lineageId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Output].Columns[time_signature]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\DimMusicTheory\Transform time_signature.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Sequence Container\DimMusicTheory\Transform time_signature.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\DimMusicTheory\Transform time_signature.Outputs[Derived Column Output].Columns[time_signature_correct]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="3"
+                          lineageId="Package\Sequence Container\DimMusicTheory\Transform time_signature.Outputs[Derived Column Output].Columns[time_signature_correct]"
+                          name="time_signature_correct"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_WSTR,3)(([LEN]([TRIM](#{Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Output].Columns[time_signature]})) &gt; 0 &amp;&amp; [FINDSTRING](#{Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Output].Columns[time_signature]},"/",1) &gt; 0) ? (DT_WSTR,10)((DT_I4)[SUBSTRING](#{Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Output].Columns[time_signature]},1,[FINDSTRING](#{Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Output].Columns[time_signature]},"/",1) - 1)) + "/" + (DT_WSTR,10)((DT_I4)[SUBSTRING](#{Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Output].Columns[time_signature]},[FINDSTRING](#{Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Output].Columns[time_signature]},"/",1) + 1,[FINDSTRING](#{Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Output].Columns[time_signature]} + "/","/",2) - [FINDSTRING](#{Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Output].Columns[time_signature]},"/",1) - 1)) : "0/0")</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_WSTR,3)((LEN(TRIM(time_signature)) &gt; 0 &amp;&amp; FINDSTRING(time_signature,"/",1) &gt; 0) ? (DT_WSTR,10)((DT_I4)SUBSTRING(time_signature,1,FINDSTRING(time_signature,"/",1) - 1)) + "/" + (DT_WSTR,10)((DT_I4)SUBSTRING(time_signature,FINDSTRING(time_signature,"/",1) + 1,FINDSTRING(time_signature + "/","/",2) - FINDSTRING(time_signature,"/",1) - 1)) : "0/0")</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\DimMusicTheory\Transform time_signature.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Sequence Container\DimMusicTheory\Transform time_signature.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\DimMusicTheory\Transform time_signature.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\DimMusicTheory\Transform time_signature.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\DimMusicTheory\Transform time_signature.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\DimMusicTheory\Transform time_signature.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\DimMusicTheory.Paths[Derived Column Output]"
+                  endId="Package\Sequence Container\DimMusicTheory\DimMusicTheory.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\Sequence Container\DimMusicTheory\Transform time_signature.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Sequence Container\DimMusicTheory.Paths[OLE DB Source Output]"
+                  endId="Package\Sequence Container\DimMusicTheory\Transform time_signature.Inputs[Derived Column Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Sequence Container\DimMusicTheory\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\DimTrack"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{5C8F2993-51C0-4F36-944B-4DC1BD010B0F}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimTrack"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\DimTrack\DimTrack"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="DimTrack"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[DimTrack]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\DimTrack\DimTrack.Connections[OleDbConnection]"
+                      connectionManagerID="{AD9B1787-F8B7-4982-93D0-9F04E02AC879}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-7TQNV83_MSSQLSERVER01.STG_Spotify]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\DimTrack\DimTrack.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\DimTrack\DimTrack.Inputs[OLE DB Destination Input].Columns[artist_name_trimmed]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="artist_name_trimmed"
+                          externalMetadataColumnId="Package\Sequence Container\DimTrack\DimTrack.Inputs[OLE DB Destination Input].ExternalColumns[artist_name]"
+                          lineageId="Package\Sequence Container\DimTrack\Track and Artist Name handeling.Outputs[Derived Column Output].Columns[artist_name_trimmed]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\DimTrack\DimTrack.Inputs[OLE DB Destination Input].Columns[track_name_trimmed]"
+                          cachedDataType="wstr"
+                          cachedLength="220"
+                          cachedName="track_name_trimmed"
+                          externalMetadataColumnId="Package\Sequence Container\DimTrack\DimTrack.Inputs[OLE DB Destination Input].ExternalColumns[track_name]"
+                          lineageId="Package\Sequence Container\DimTrack\Track and Artist Name handeling.Outputs[Derived Column Output].Columns[track_name_trimmed]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\DimTrack\DimTrack.Inputs[OLE DB Destination Input].ExternalColumns[track_id]"
+                          dataType="i4"
+                          name="track_id" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\DimTrack\DimTrack.Inputs[OLE DB Destination Input].ExternalColumns[track_name]"
+                          dataType="wstr"
+                          length="220"
+                          name="track_name" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\DimTrack\DimTrack.Inputs[OLE DB Destination Input].ExternalColumns[artist_name]"
+                          dataType="wstr"
+                          length="100"
+                          name="artist_name" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\DimTrack\DimTrack.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\DimTrack\DimTrack.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\DimTrack\DimTrack.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\DimTrack\DimTrack.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\DimTrack\DimTrack.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\DimTrack\DimTrack.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\DimTrack\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[ODS_Spotify]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT 
+   LTRIM(RTRIM(UPPER(artist_name))) AS artist_name,
+   LTRIM(RTRIM(UPPER(track_name))) AS track_name
+FROM 
+   dbo.ODS_Spotify;</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\DimTrack\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{875BBFC5-ADBD-4979-BEBF-47B563605726}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-7TQNV83_MSSQLSERVER01.ODS_Spotify]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\DimTrack\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\DimTrack\OLE DB Source.Outputs[OLE DB Source Output].Columns[track_name]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\DimTrack\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[track_name]"
+                          length="220"
+                          lineageId="Package\Sequence Container\DimTrack\OLE DB Source.Outputs[OLE DB Source Output].Columns[track_name]"
+                          name="track_name"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\DimTrack\OLE DB Source.Outputs[OLE DB Source Output].Columns[artist_name]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\DimTrack\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[artist_name]"
+                          length="100"
+                          lineageId="Package\Sequence Container\DimTrack\OLE DB Source.Outputs[OLE DB Source Output].Columns[artist_name]"
+                          name="artist_name"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\DimTrack\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[track_name]"
+                          dataType="wstr"
+                          length="220"
+                          name="track_name" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\DimTrack\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[artist_name]"
+                          dataType="wstr"
+                          length="100"
+                          name="artist_name" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\DimTrack\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\DimTrack\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[track_name]"
+                          dataType="wstr"
+                          length="220"
+                          lineageId="Package\Sequence Container\DimTrack\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[track_name]"
+                          name="track_name" />
+                        <outputColumn
+                          refId="Package\Sequence Container\DimTrack\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[artist_name]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Sequence Container\DimTrack\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[artist_name]"
+                          name="artist_name" />
+                        <outputColumn
+                          refId="Package\Sequence Container\DimTrack\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\DimTrack\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\DimTrack\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\DimTrack\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\DimTrack\Track and Artist Name handeling"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Track and Artist Name handeling"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\DimTrack\Track and Artist Name handeling.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\DimTrack\Track and Artist Name handeling.Inputs[Derived Column Input].Columns[track_name]"
+                          cachedDataType="wstr"
+                          cachedLength="220"
+                          cachedName="track_name"
+                          lineageId="Package\Sequence Container\DimTrack\OLE DB Source.Outputs[OLE DB Source Output].Columns[track_name]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\DimTrack\Track and Artist Name handeling.Inputs[Derived Column Input].Columns[artist_name]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="artist_name"
+                          lineageId="Package\Sequence Container\DimTrack\OLE DB Source.Outputs[OLE DB Source Output].Columns[artist_name]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\DimTrack\Track and Artist Name handeling.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Sequence Container\DimTrack\Track and Artist Name handeling.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\DimTrack\Track and Artist Name handeling.Outputs[Derived Column Output].Columns[artist_name_trimmed]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="100"
+                          lineageId="Package\Sequence Container\DimTrack\Track and Artist Name handeling.Outputs[Derived Column Output].Columns[artist_name_trimmed]"
+                          name="artist_name_trimmed"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_WSTR,100)[LTRIM]([RTRIM]([ISNULL]((DT_WSTR,100)#{Package\Sequence Container\DimTrack\OLE DB Source.Outputs[OLE DB Source Output].Columns[artist_name]}) ? "Unknown" : (DT_WSTR,100)#{Package\Sequence Container\DimTrack\OLE DB Source.Outputs[OLE DB Source Output].Columns[artist_name]}))</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_WSTR,100)LTRIM(RTRIM(ISNULL((DT_WSTR,100)artist_name) ? "Unknown" : (DT_WSTR,100)artist_name))</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\DimTrack\Track and Artist Name handeling.Outputs[Derived Column Output].Columns[track_name_trimmed]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="220"
+                          lineageId="Package\Sequence Container\DimTrack\Track and Artist Name handeling.Outputs[Derived Column Output].Columns[track_name_trimmed]"
+                          name="track_name_trimmed"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_WSTR,220)[LTRIM]([RTRIM]([ISNULL]((DT_WSTR,220)#{Package\Sequence Container\DimTrack\OLE DB Source.Outputs[OLE DB Source Output].Columns[track_name]}) ? "Unknown" : (DT_WSTR,220)#{Package\Sequence Container\DimTrack\OLE DB Source.Outputs[OLE DB Source Output].Columns[track_name]}))</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_WSTR,220)LTRIM(RTRIM(ISNULL((DT_WSTR,220)track_name) ? "Unknown" : (DT_WSTR,220)track_name))</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\DimTrack\Track and Artist Name handeling.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Sequence Container\DimTrack\Track and Artist Name handeling.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\DimTrack\Track and Artist Name handeling.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\DimTrack\Track and Artist Name handeling.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\DimTrack\Track and Artist Name handeling.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\DimTrack\Track and Artist Name handeling.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\DimTrack.Paths[Derived Column Output]"
+                  endId="Package\Sequence Container\DimTrack\DimTrack.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\Sequence Container\DimTrack\Track and Artist Name handeling.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Sequence Container\DimTrack.Paths[OLE DB Source Output]"
+                  endId="Package\Sequence Container\DimTrack\Track and Artist Name handeling.Inputs[Derived Column Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Sequence Container\DimTrack\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Fact"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{aac13370-725a-4dbd-9a18-c46b38468b93}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Fact"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Fact\Fact_STG"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Fact_STG"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Fact_Spotify]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Fact\Fact_STG.Connections[OleDbConnection]"
+                      connectionManagerID="{AD9B1787-F8B7-4982-93D0-9F04E02AC879}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-7TQNV83_MSSQLSERVER01.STG_Spotify]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].Columns[key_track]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="key_track"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[key_track]"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_track]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].Columns[valence]"
+                          cachedDataType="r8"
+                          cachedName="valence"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[valence]"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[valence]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].Columns[time_signature_confidence]"
+                          cachedDataType="r8"
+                          cachedName="time_signature_confidence"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[time_signature_confidence]"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[time_signature_confidence]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].Columns[tempo]"
+                          cachedDataType="r8"
+                          cachedName="tempo"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[tempo]"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[tempo]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].Columns[speechiness]"
+                          cachedDataType="r8"
+                          cachedName="speechiness"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[speechiness]"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[speechiness]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].Columns[loudness]"
+                          cachedDataType="r8"
+                          cachedName="loudness"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[loudness]"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[loudness]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].Columns[liveness]"
+                          cachedDataType="r8"
+                          cachedName="liveness"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[liveness]"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[liveness]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].Columns[instrumentalness]"
+                          cachedDataType="r8"
+                          cachedName="instrumentalness"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[instrumentalness]"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[instrumentalness]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].Columns[energy]"
+                          cachedDataType="r8"
+                          cachedName="energy"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[energy]"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[energy]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].Columns[duration_ms]"
+                          cachedDataType="r8"
+                          cachedName="duration_ms"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[duration_ms]"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[duration_ms]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].Columns[danceability]"
+                          cachedDataType="r8"
+                          cachedName="danceability"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[danceability]"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[danceability]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].Columns[acousticness]"
+                          cachedDataType="r8"
+                          cachedName="acousticness"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[acousticness]"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[acousticness]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].Columns[popularity]"
+                          cachedDataType="i4"
+                          cachedName="popularity"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[popularity]"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[popularity]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].Columns[genre]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="genre"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[genre]"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[genre]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].Columns[mode]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="mode"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[mode]"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[mode]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].Columns[track_name_unified]"
+                          cachedDataType="wstr"
+                          cachedLength="220"
+                          cachedName="track_name_unified"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[track_name]"
+                          lineageId="Package\Sequence Container\Fact\time_signature &amp; track_name.Outputs[Derived Column Output].Columns[track_name_unified]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].Columns[time_signature_correct]"
+                          cachedDataType="wstr"
+                          cachedLength="3"
+                          cachedName="time_signature_correct"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[time_signature]"
+                          lineageId="Package\Sequence Container\Fact\time_signature &amp; track_name.Outputs[Derived Column Output].Columns[time_signature_correct]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].Columns[artist_name_unified]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="artist_name_unified"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[artist_name]"
+                          lineageId="Package\Sequence Container\Fact\time_signature &amp; track_name.Outputs[Derived Column Output].Columns[artist_name_unified]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[ods_id]"
+                          dataType="i4"
+                          name="ods_id" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[popularity]"
+                          dataType="i4"
+                          name="popularity" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[acousticness]"
+                          dataType="r8"
+                          name="acousticness" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[danceability]"
+                          dataType="r8"
+                          name="danceability" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[duration_ms]"
+                          dataType="r8"
+                          name="duration_ms" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[energy]"
+                          dataType="r8"
+                          name="energy" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[instrumentalness]"
+                          dataType="r8"
+                          name="instrumentalness" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[key_track]"
+                          dataType="wstr"
+                          length="2"
+                          name="key_track" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[liveness]"
+                          dataType="r8"
+                          name="liveness" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[loudness]"
+                          dataType="r8"
+                          name="loudness" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[speechiness]"
+                          dataType="r8"
+                          name="speechiness" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[tempo]"
+                          dataType="r8"
+                          name="tempo" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[time_signature_confidence]"
+                          dataType="r8"
+                          name="time_signature_confidence" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[valence]"
+                          dataType="r8"
+                          name="valence" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[genre]"
+                          dataType="wstr"
+                          length="50"
+                          name="genre" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[time_signature]"
+                          dataType="wstr"
+                          length="50"
+                          name="time_signature" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[mode]"
+                          dataType="wstr"
+                          length="50"
+                          name="mode" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[track_name]"
+                          dataType="wstr"
+                          length="220"
+                          name="track_name" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input].ExternalColumns[artist_name]"
+                          dataType="wstr"
+                          length="100"
+                          name="artist_name" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Fact\Fact_STG.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Fact\Fact_STG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\Fact_STG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Fact\Fact_STG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Fact\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[ODS_Spotify]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT valence, time_signature_confidence, tempo, speechiness, loudness, liveness, key_track, instrumentalness, energy, duration_ms, danceability, acousticness, popularity, 
+  REPLACE(LTRIM(RTRIM(genre)), '’', '''') AS genre,
+   LTRIM(RTRIM(UPPER(artist_name))) AS artist_name,
+   LTRIM(RTRIM(UPPER(track_name))) AS track_name,
+mode, time_signature
+FROM     dbo.ODS_Spotify</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Fact\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{875BBFC5-ADBD-4979-BEBF-47B563605726}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-7TQNV83_MSSQLSERVER01.ODS_Spotify]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_track]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[key_track]"
+                          length="2"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_track]"
+                          name="key_track"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[valence]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[valence]"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[valence]"
+                          name="valence"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[time_signature_confidence]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[time_signature_confidence]"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[time_signature_confidence]"
+                          name="time_signature_confidence"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[tempo]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tempo]"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[tempo]"
+                          name="tempo"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[speechiness]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[speechiness]"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[speechiness]"
+                          name="speechiness"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[loudness]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[loudness]"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[loudness]"
+                          name="loudness"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[liveness]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[liveness]"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[liveness]"
+                          name="liveness"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[instrumentalness]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[instrumentalness]"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[instrumentalness]"
+                          name="instrumentalness"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[energy]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[energy]"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[energy]"
+                          name="energy"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[duration_ms]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[duration_ms]"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[duration_ms]"
+                          name="duration_ms"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[danceability]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[danceability]"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[danceability]"
+                          name="danceability"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[acousticness]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[acousticness]"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[acousticness]"
+                          name="acousticness"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[popularity]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[popularity]"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[popularity]"
+                          name="popularity"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[genre]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[genre]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[genre]"
+                          name="genre"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[artist_name]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[artist_name]"
+                          length="100"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[artist_name]"
+                          name="artist_name"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[track_name]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[track_name]"
+                          length="220"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[track_name]"
+                          name="track_name"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[mode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[mode]"
+                          length="10"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[mode]"
+                          name="mode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[time_signature]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[time_signature]"
+                          length="6"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[time_signature]"
+                          name="time_signature"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[key_track]"
+                          dataType="wstr"
+                          length="2"
+                          name="key_track" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[valence]"
+                          dataType="r8"
+                          name="valence" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[time_signature_confidence]"
+                          dataType="r8"
+                          name="time_signature_confidence" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tempo]"
+                          dataType="r8"
+                          name="tempo" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[speechiness]"
+                          dataType="r8"
+                          name="speechiness" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[loudness]"
+                          dataType="r8"
+                          name="loudness" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[liveness]"
+                          dataType="r8"
+                          name="liveness" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[instrumentalness]"
+                          dataType="r8"
+                          name="instrumentalness" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[energy]"
+                          dataType="r8"
+                          name="energy" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[duration_ms]"
+                          dataType="r8"
+                          name="duration_ms" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[danceability]"
+                          dataType="r8"
+                          name="danceability" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[acousticness]"
+                          dataType="r8"
+                          name="acousticness" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[popularity]"
+                          dataType="i4"
+                          name="popularity" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[genre]"
+                          dataType="wstr"
+                          length="4000"
+                          name="genre" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[artist_name]"
+                          dataType="wstr"
+                          length="100"
+                          name="artist_name" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[track_name]"
+                          dataType="wstr"
+                          length="220"
+                          name="track_name" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[mode]"
+                          dataType="wstr"
+                          length="10"
+                          name="mode" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[time_signature]"
+                          dataType="wstr"
+                          length="6"
+                          name="time_signature" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[valence]"
+                          dataType="r8"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[valence]"
+                          name="valence" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[time_signature_confidence]"
+                          dataType="r8"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[time_signature_confidence]"
+                          name="time_signature_confidence" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tempo]"
+                          dataType="r8"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tempo]"
+                          name="tempo" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[speechiness]"
+                          dataType="r8"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[speechiness]"
+                          name="speechiness" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[loudness]"
+                          dataType="r8"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[loudness]"
+                          name="loudness" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[liveness]"
+                          dataType="r8"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[liveness]"
+                          name="liveness" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[key_track]"
+                          dataType="wstr"
+                          length="2"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[key_track]"
+                          name="key_track" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[instrumentalness]"
+                          dataType="r8"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[instrumentalness]"
+                          name="instrumentalness" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[energy]"
+                          dataType="r8"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[energy]"
+                          name="energy" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[duration_ms]"
+                          dataType="r8"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[duration_ms]"
+                          name="duration_ms" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[danceability]"
+                          dataType="r8"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[danceability]"
+                          name="danceability" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[acousticness]"
+                          dataType="r8"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[acousticness]"
+                          name="acousticness" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[popularity]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[popularity]"
+                          name="popularity" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[genre]"
+                          dataType="wstr"
+                          length="4000"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[genre]"
+                          name="genre" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[artist_name]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[artist_name]"
+                          name="artist_name" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[track_name]"
+                          dataType="wstr"
+                          length="220"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[track_name]"
+                          name="track_name" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[mode]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[mode]"
+                          name="mode" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[time_signature]"
+                          dataType="wstr"
+                          length="6"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[time_signature]"
+                          name="time_signature" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Fact\time_signature &amp; track_name"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="time_signature &amp; track_name"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Fact\time_signature &amp; track_name.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Fact\time_signature &amp; track_name.Inputs[Derived Column Input].Columns[track_name]"
+                          cachedDataType="wstr"
+                          cachedLength="220"
+                          cachedName="track_name"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[track_name]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Fact\time_signature &amp; track_name.Inputs[Derived Column Input].Columns[time_signature]"
+                          cachedDataType="wstr"
+                          cachedLength="6"
+                          cachedName="time_signature"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[time_signature]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Fact\time_signature &amp; track_name.Inputs[Derived Column Input].Columns[artist_name]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="artist_name"
+                          lineageId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[artist_name]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Fact\time_signature &amp; track_name.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Sequence Container\Fact\time_signature &amp; track_name.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\time_signature &amp; track_name.Outputs[Derived Column Output].Columns[track_name_unified]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="220"
+                          lineageId="Package\Sequence Container\Fact\time_signature &amp; track_name.Outputs[Derived Column Output].Columns[track_name_unified]"
+                          name="track_name_unified"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_WSTR,220)[LTRIM]([RTRIM]([ISNULL]((DT_WSTR,220)#{Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[track_name]}) ? "Unknown" : (DT_WSTR,220)#{Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[track_name]}))</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_WSTR,220)LTRIM(RTRIM(ISNULL((DT_WSTR,220)track_name) ? "Unknown" : (DT_WSTR,220)track_name))</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\time_signature &amp; track_name.Outputs[Derived Column Output].Columns[time_signature_correct]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="3"
+                          lineageId="Package\Sequence Container\Fact\time_signature &amp; track_name.Outputs[Derived Column Output].Columns[time_signature_correct]"
+                          name="time_signature_correct"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_WSTR,3)(([LEN]([TRIM](#{Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[time_signature]})) &gt; 0 &amp;&amp; [FINDSTRING](#{Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[time_signature]},"/",1) &gt; 0) ? (DT_WSTR,10)((DT_I4)[SUBSTRING](#{Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[time_signature]},1,[FINDSTRING](#{Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[time_signature]},"/",1) - 1)) + "/" + (DT_WSTR,10)((DT_I4)[SUBSTRING](#{Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[time_signature]},[FINDSTRING](#{Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[time_signature]},"/",1) + 1,[FINDSTRING](#{Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[time_signature]} + "/","/",2) - [FINDSTRING](#{Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[time_signature]},"/",1) - 1)) : "0/0")</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_WSTR,3)((LEN(TRIM(time_signature)) &gt; 0 &amp;&amp; FINDSTRING(time_signature,"/",1) &gt; 0) ? (DT_WSTR,10)((DT_I4)SUBSTRING(time_signature,1,FINDSTRING(time_signature,"/",1) - 1)) + "/" + (DT_WSTR,10)((DT_I4)SUBSTRING(time_signature,FINDSTRING(time_signature,"/",1) + 1,FINDSTRING(time_signature + "/","/",2) - FINDSTRING(time_signature,"/",1) - 1)) : "0/0")</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\time_signature &amp; track_name.Outputs[Derived Column Output].Columns[artist_name_unified]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="100"
+                          lineageId="Package\Sequence Container\Fact\time_signature &amp; track_name.Outputs[Derived Column Output].Columns[artist_name_unified]"
+                          name="artist_name_unified"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_WSTR,100)[LTRIM]([RTRIM]([ISNULL]((DT_WSTR,100)#{Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[artist_name]}) ? "Unknown" : (DT_WSTR,100)#{Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[artist_name]}))</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_WSTR,100)LTRIM(RTRIM(ISNULL((DT_WSTR,100)artist_name) ? "Unknown" : (DT_WSTR,100)artist_name))</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Fact\time_signature &amp; track_name.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Sequence Container\Fact\time_signature &amp; track_name.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\time_signature &amp; track_name.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Fact\time_signature &amp; track_name.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Fact\time_signature &amp; track_name.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Fact\time_signature &amp; track_name.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Fact.Paths[Derived Column Output]"
+                  endId="Package\Sequence Container\Fact\Fact_STG.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\Sequence Container\Fact\time_signature &amp; track_name.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Sequence Container\Fact.Paths[OLE DB Source Output]"
+                  endId="Package\Sequence Container\Fact\time_signature &amp; track_name.Inputs[Derived Column Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Sequence Container\Fact\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Truncate STG DB"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{8297FCAC-9580-47BC-8F4F-3F60A74A7E0D}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate STG DB"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{AD9B1787-F8B7-4982-93D0-9F04E02AC879}"
+              SQLTask:SqlStatementSource="Truncate Table [STG_Spotify].[dbo].[Fact_Spotify];&#xA;&#xA;Truncate Table [STG_Spotify].[dbo].[DimGenre];&#xA;&#xA;Truncate Table [STG_Spotify].[dbo].[DimMusicTheory];&#xA;&#xA;Truncate Table [STG_Spotify].[dbo].[DimTrack];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{CC2F14BF-3305-40CD-8949-AF75893875CF}"
+          DTS:From="Package\Sequence Container\Truncate STG DB"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Sequence Container\DimGenre" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{EF2C4BEC-A49C-44B0-BFB4-DFBE134A5CF9}"
+          DTS:From="Package\Sequence Container\DimGenre"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Sequence Container\DimTrack" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{B2792C03-9EF2-455D-B312-B83068FBDEAB}"
+          DTS:From="Package\Sequence Container\DimTrack"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Sequence Container\DimMusicTheory" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{A20B55FB-4093-4494-B793-134EF4EFDDD0}"
+          DTS:From="Package\Sequence Container\DimMusicTheory"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Sequence Container\Fact" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="124.8,41.6"
+          Id="Package\Sequence Container\DimGenre"
+          TopLeft="56.1428574241546,156.564705665178" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Sequence Container\DimMusicTheory"
+          TopLeft="46.8571431186733,342.188234925456" />
+        <NodeLayout
+          Size="123.2,41.6"
+          Id="Package\Sequence Container\DimTrack"
+          TopLeft="61.1428574347983,248.894117360172" />
+        <NodeLayout
+          Size="98.4,41.6"
+          Id="Package\Sequence Container\Fact"
+          TopLeft="74.7142860351167,427.764705528437" />
+        <NodeLayout
+          Size="159.2,41.6"
+          Id="Package\Sequence Container\Truncate STG DB"
+          TopLeft="40.4285716764172,77.0352939701823" />
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          TopLeft="119.285714550286,118.635293970182">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.9294116949954"
+              Start="0,0"
+              End="0,30.4294116949954">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.4294116949954" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="120.642857429476,198.164705665178">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.7294116949939"
+              Start="0,0"
+              End="0,43.2294116949939">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.2294116949939" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
+          TopLeft="123.800000276736,290.494117360172">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.6941175652843"
+              Start="0,0"
+              End="0,44.1941175652843">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.1941175652843" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 3]"
+          TopLeft="124.385714576895,383.788234925456">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.9764706029814"
+              Start="0,0"
+              End="0,36.4764706029814">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.4764706029814" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="260.8,532.8"
+          Size="260.8,576"
+          Id="Package\Sequence Container"
+          TopLeft="245.714286237347,32.8823529123538" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Sequence Container\DimGenre">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="124.8,41.6"
+          Id="Package\Sequence Container\DimGenre\DimGenre"
+          TopLeft="367.142857924408,148.352941046433" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Sequence Container\DimGenre\OLE DB Source"
+          TopLeft="360.000000766345,43.5882352559109" />
+        <EdgeLayout
+          Id="Package\Sequence Container\DimGenre.Paths[OLE DB Source Output]"
+          TopLeft="432.171429345377,85.1882352559109">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63.1647057905221"
+              Start="0,0"
+              End="0,55.6647057905221">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.6647057905221" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\DimGenre\DimGenre">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\DimGenre\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sequence Container\DimMusicTheory">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Sequence Container\DimMusicTheory\OLE DB Source"
+          TopLeft="282.999996677041,16.0000006556511" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Sequence Container\DimMusicTheory\DimMusicTheory"
+          TopLeft="283.999996954081,193.142856617435" />
+        <NodeLayout
+          Size="200,41.6"
+          Id="Package\Sequence Container\DimMusicTheory\Transform time_signature"
+          TopLeft="265.035714347523,114.507562826067" />
+        <EdgeLayout
+          Id="Package\Sequence Container\DimMusicTheory.Paths[OLE DB Source Output]"
+          TopLeft="361.417855512282,57.6000006556511">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.9075621704157"
+              Start="0,0"
+              End="0,49.4075621704157">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.4075621704157" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\DimMusicTheory.Paths[Derived Column Output]"
+          TopLeft="363.517855650802,156.107562826067">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.0352937913684"
+              Start="0,0"
+              End="0,29.5352937913684">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5352937913684" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\DimMusicTheory\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\DimMusicTheory\DimMusicTheory">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sequence Container\DimTrack">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Sequence Container\DimTrack\OLE DB Source"
+          TopLeft="282.999996677041,16.0000006556511" />
+        <NodeLayout
+          Size="123.2,41.6"
+          Id="Package\Sequence Container\DimTrack\DimTrack"
+          TopLeft="299.428568140585,194.176471087707" />
+        <NodeLayout
+          Size="232.8,41.6"
+          Id="Package\Sequence Container\DimTrack\Track and Artist Name handeling"
+          TopLeft="253.999996938876,98.1764712963245" />
+        <EdgeLayout
+          Id="Package\Sequence Container\DimTrack.Paths[OLE DB Source Output]"
+          TopLeft="357.799996677041,57.6000006556511">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.600000261835,40.5764706406733"
+              Start="0,0"
+              End="12.600000261835,33.0764706406733">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.2882353203367" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.2882353203367"
+                    Point2="0,20.2882353203367"
+                    Point3="4,20.2882353203367" />
+                  <mssgle:LineSegment
+                    End="8.60000026183502,20.2882353203367" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.60000026183502,20.2882353203367"
+                    Point2="12.600000261835,20.2882353203367"
+                    Point3="12.600000261835,24.2882353203367" />
+                  <mssgle:LineSegment
+                    End="12.600000261835,33.0764706406733" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\DimTrack.Paths[Derived Column Output]"
+          TopLeft="370.399996938876,139.776471296324">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.37142879829099,54.3999997913826"
+              Start="0,0"
+              End="-9.37142879829099,46.8999997913826">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.1999998956913" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.1999998956913"
+                    Point2="0,27.1999998956913"
+                    Point3="-4,27.1999998956913" />
+                  <mssgle:LineSegment
+                    End="-5.37142879829099,27.1999998956913" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.37142879829099,27.1999998956913"
+                    Point2="-9.37142879829099,27.1999998956913"
+                    Point3="-9.37142879829099,31.1999998956913" />
+                  <mssgle:LineSegment
+                    End="-9.37142879829099,46.8999997913826" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\DimTrack\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\DimTrack\DimTrack">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Fact">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="217.6,41.6"
+          Id="Package\Sequence Container\Fact\time_signature &amp; track_name"
+          TopLeft="268.714281710131,108.571426945073" />
+        <NodeLayout
+          Size="123.2,41.6"
+          Id="Package\Sequence Container\Fact\Fact_STG"
+          TopLeft="307.571425174268,200.285713653856" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Sequence Container\Fact\OLE DB Source"
+          TopLeft="282.999996677041,16.0000006556511" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Fact.Paths[OLE DB Source Output]"
+          TopLeft="357.799996677041,57.6000006556511">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19.7142850330898,50.9714262894222"
+              Start="0,0"
+              End="19.7142850330898,43.4714262894222">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.4857131447111" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.4857131447111"
+                    Point2="0,25.4857131447111"
+                    Point3="4,25.4857131447111" />
+                  <mssgle:LineSegment
+                    End="15.7142850330898,25.4857131447111" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.7142850330898,25.4857131447111"
+                    Point2="19.7142850330898,25.4857131447111"
+                    Point3="19.7142850330898,29.4857131447111" />
+                  <mssgle:LineSegment
+                    End="19.7142850330898,43.4714262894222" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Fact.Paths[Derived Column Output]"
+          TopLeft="377.514281710131,150.171426945073">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-8.34285653586312,50.1142867087826"
+              Start="0,0"
+              End="-8.34285653586312,42.6142867087826">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.0571433543913" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.0571433543913"
+                    Point2="0,25.0571433543913"
+                    Point3="-4,25.0571433543913" />
+                  <mssgle:LineSegment
+                    End="-4.34285653586312,25.0571433543913" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4.34285653586312,25.0571433543913"
+                    Point2="-8.34285653586312,25.0571433543913"
+                    Point3="-8.34285653586312,29.0571433543913" />
+                  <mssgle:LineSegment
+                    End="-8.34285653586312,42.6142867087826" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-12.1714282679316,30.0571433543913,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Fact\Fact_STG">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Fact\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DESKTOP-7TQNV83_MSSQLSERVER01.ODS_Spotify"
+  DTS:DTSID="{875BBFC5-ADBD-4979-BEBF-47B563605726}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-7TQNV83\MSSQLSERVER01;Initial Catalog=ODS_Spotify;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Spotify_DWH-{875BBFC5-ADBD-4979-BEBF-47B563605726}DESKTOP-7TQNV83\MSSQLSERVER01.ODS_Spotify;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

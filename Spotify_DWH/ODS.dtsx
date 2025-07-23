@@ -1,0 +1,1460 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/19/2025 5:18:47 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-7TQNV83"
+  DTS:CreatorName="DESKTOP-7TQNV83\kyrellos"
+  DTS:DTSID="{EF4EC958-BA87-4BCB-8DF1-3693310279C4}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="ODS"
+  DTS:PackageType="5"
+  DTS:VersionBuild="32"
+  DTS:VersionGUID="{7EB7F63D-9E1E-41FF-8F78-F11C23EF571F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F955C53A-C7DF-4231-ABE9-719E5CC21D39}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">SpotifyFeatures$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="{D984EAFE-B302-46E3-A347-C1A9762ACE6F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[genre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[genre]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[genre]"
+                      name="genre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[artist_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[artist_name]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[artist_name]"
+                      name="artist_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[track_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[track_name]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[track_name]"
+                      name="track_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[track_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[track_id]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[track_id]"
+                      name="track_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[popularity]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[popularity]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[popularity]"
+                      name="popularity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[acousticness]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[acousticness]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[acousticness]"
+                      name="acousticness"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[danceability]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[danceability]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[danceability]"
+                      name="danceability"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[duration_ms]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[duration_ms]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[duration_ms]"
+                      name="duration_ms"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[energy]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[energy]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[energy]"
+                      name="energy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[instrumentalness]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[instrumentalness]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[instrumentalness]"
+                      name="instrumentalness"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[key]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[key]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[key]"
+                      name="key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[liveness]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[liveness]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[liveness]"
+                      name="liveness"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[loudness]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[loudness]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[loudness]"
+                      name="loudness"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[mode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[mode]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[mode]"
+                      name="mode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[speechiness]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[speechiness]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[speechiness]"
+                      name="speechiness"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[tempo]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[tempo]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[tempo]"
+                      name="tempo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[time_signature]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[time_signature]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[time_signature]"
+                      name="time_signature"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[valence]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[valence]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[valence]"
+                      name="valence"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[genre]"
+                      dataType="wstr"
+                      length="255"
+                      name="genre" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[artist_name]"
+                      dataType="wstr"
+                      length="255"
+                      name="artist_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[track_name]"
+                      dataType="wstr"
+                      length="255"
+                      name="track_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[track_id]"
+                      dataType="wstr"
+                      length="255"
+                      name="track_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[popularity]"
+                      dataType="r8"
+                      name="popularity" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[acousticness]"
+                      dataType="r8"
+                      name="acousticness" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[danceability]"
+                      dataType="r8"
+                      name="danceability" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[duration_ms]"
+                      dataType="r8"
+                      name="duration_ms" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[energy]"
+                      dataType="r8"
+                      name="energy" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[instrumentalness]"
+                      dataType="r8"
+                      name="instrumentalness" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[key]"
+                      dataType="wstr"
+                      length="255"
+                      name="key" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[liveness]"
+                      dataType="r8"
+                      name="liveness" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[loudness]"
+                      dataType="r8"
+                      name="loudness" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[mode]"
+                      dataType="wstr"
+                      length="255"
+                      name="mode" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[speechiness]"
+                      dataType="r8"
+                      name="speechiness" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[tempo]"
+                      dataType="r8"
+                      name="tempo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[time_signature]"
+                      dataType="date"
+                      name="time_signature" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[valence]"
+                      dataType="r8"
+                      name="valence" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[genre]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[genre]"
+                      name="genre" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[artist_name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[artist_name]"
+                      name="artist_name" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[track_name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[track_name]"
+                      name="track_name" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[track_id]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[track_id]"
+                      name="track_id" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[popularity]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[popularity]"
+                      name="popularity" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[acousticness]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[acousticness]"
+                      name="acousticness" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[danceability]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[danceability]"
+                      name="danceability" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[duration_ms]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[duration_ms]"
+                      name="duration_ms" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[energy]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[energy]"
+                      name="energy" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[instrumentalness]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[instrumentalness]"
+                      name="instrumentalness" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[key]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[key]"
+                      name="key" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[liveness]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[liveness]"
+                      name="liveness" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[loudness]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[loudness]"
+                      name="loudness" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[mode]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[mode]"
+                      name="mode" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[speechiness]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[speechiness]"
+                      name="speechiness" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[tempo]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[tempo]"
+                      name="tempo" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[time_signature]"
+                      dataType="date"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[time_signature]"
+                      name="time_signature" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[valence]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[valence]"
+                      name="valence" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\ODS_Spotify"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="ODS_Spotify"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[ODS_Spotify]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\ODS_Spotify.Connections[OleDbConnection]"
+                  connectionManagerID="{875BBFC5-ADBD-4979-BEBF-47B563605726}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-7TQNV83_MSSQLSERVER01.ODS_Spotify]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].Columns[track_id]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="track_id"
+                      externalMetadataColumnId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[track_id]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[track_id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].Columns[popularity]"
+                      cachedDataType="r8"
+                      cachedName="popularity"
+                      externalMetadataColumnId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[popularity]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[popularity]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].Columns[acousticness]"
+                      cachedDataType="r8"
+                      cachedName="acousticness"
+                      externalMetadataColumnId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[acousticness]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[acousticness]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].Columns[danceability]"
+                      cachedDataType="r8"
+                      cachedName="danceability"
+                      externalMetadataColumnId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[danceability]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[danceability]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].Columns[energy]"
+                      cachedDataType="r8"
+                      cachedName="energy"
+                      externalMetadataColumnId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[energy]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[energy]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].Columns[instrumentalness]"
+                      cachedDataType="r8"
+                      cachedName="instrumentalness"
+                      externalMetadataColumnId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[instrumentalness]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[instrumentalness]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].Columns[liveness]"
+                      cachedDataType="r8"
+                      cachedName="liveness"
+                      externalMetadataColumnId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[liveness]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[liveness]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].Columns[loudness]"
+                      cachedDataType="r8"
+                      cachedName="loudness"
+                      externalMetadataColumnId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[loudness]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[loudness]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].Columns[speechiness]"
+                      cachedDataType="r8"
+                      cachedName="speechiness"
+                      externalMetadataColumnId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[speechiness]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[speechiness]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].Columns[tempo]"
+                      cachedDataType="r8"
+                      cachedName="tempo"
+                      externalMetadataColumnId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[tempo]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[tempo]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].Columns[valence]"
+                      cachedDataType="r8"
+                      cachedName="valence"
+                      externalMetadataColumnId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[valence]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[valence]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].Columns[time_signature_confidence]"
+                      cachedDataType="r4"
+                      cachedName="time_signature_confidence"
+                      externalMetadataColumnId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[time_signature_confidence]"
+                      lineageId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Output].Columns[time_signature_confidence]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].Columns[duration]"
+                      cachedDataType="r8"
+                      cachedName="duration"
+                      externalMetadataColumnId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[duration_ms]"
+                      lineageId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Output].Columns[duration]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].Columns[Artist_Name_New]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Artist_Name_New"
+                      externalMetadataColumnId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[artist_name]"
+                      lineageId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Output].Columns[Artist_Name_New]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].Columns[Track_Name_New]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Track_Name_New"
+                      externalMetadataColumnId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[track_name]"
+                      lineageId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Output].Columns[Track_Name_New]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].Columns[Mode_New]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Mode_New"
+                      externalMetadataColumnId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[mode]"
+                      lineageId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Output].Columns[Mode_New]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].Columns[Key_New]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Key_New"
+                      externalMetadataColumnId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[key_track]"
+                      lineageId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Output].Columns[Key_New]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].Columns[Genre_New]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Genre_New"
+                      externalMetadataColumnId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[genre]"
+                      lineageId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Output].Columns[Genre_New]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].Columns[Time_Signature_New]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Time_Signature_New"
+                      externalMetadataColumnId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[time_signature]"
+                      lineageId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Output].Columns[Time_Signature_New]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[genre]"
+                      dataType="wstr"
+                      length="50"
+                      name="genre" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[artist_name]"
+                      dataType="wstr"
+                      length="100"
+                      name="artist_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[track_name]"
+                      dataType="wstr"
+                      length="220"
+                      name="track_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[track_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="track_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[popularity]"
+                      dataType="i4"
+                      name="popularity" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[acousticness]"
+                      dataType="r8"
+                      name="acousticness" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[danceability]"
+                      dataType="r8"
+                      name="danceability" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[duration_ms]"
+                      dataType="r8"
+                      name="duration_ms" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[energy]"
+                      dataType="r8"
+                      name="energy" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[instrumentalness]"
+                      dataType="r8"
+                      name="instrumentalness" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[key_track]"
+                      dataType="wstr"
+                      length="2"
+                      name="key_track" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[liveness]"
+                      dataType="r8"
+                      name="liveness" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[loudness]"
+                      dataType="r8"
+                      name="loudness" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[mode]"
+                      dataType="wstr"
+                      length="10"
+                      name="mode" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[speechiness]"
+                      dataType="r8"
+                      name="speechiness" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[tempo]"
+                      dataType="r8"
+                      name="tempo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[time_signature]"
+                      dataType="wstr"
+                      length="6"
+                      name="time_signature" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[time_signature_confidence]"
+                      dataType="r8"
+                      name="time_signature_confidence" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[valence]"
+                      dataType="r8"
+                      name="valence" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input].ExternalColumns[ods_id]"
+                      dataType="i4"
+                      name="ods_id" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\ODS_Spotify.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ODS_Spotify.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ODS_Spotify.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ODS_Spotify.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\time_Signature"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="time_Signature"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\time_Signature.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\time_Signature.Inputs[Data Conversion Input].Columns[time_signature]"
+                      cachedDataType="date"
+                      cachedName="time_signature"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[time_signature]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\time_Signature.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Task\time_Signature.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\time_Signature.Outputs[Data Conversion Output].Columns[Copy of time_signature]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Data Flow Task\time_Signature.Outputs[Data Conversion Output].Columns[Copy of time_signature]"
+                      name="Copy of time_signature"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[time_signature]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\time_Signature.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Task\time_Signature.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\time_Signature.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\time_Signature.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\time_Signature.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\time_Signature.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\time_signature_1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="time_signature_1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\time_signature_1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\time_signature_1.Inputs[Derived Column Input].Columns[time_signature]"
+                      cachedDataType="date"
+                      cachedName="time_signature"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[time_signature]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\time_signature_1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\time_signature_1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\time_signature_1.Outputs[Derived Column Output].Columns[time_signature_1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="6"
+                      lineageId="Package\Data Flow Task\time_signature_1.Outputs[Derived Column Output].Columns[time_signature_1]"
+                      name="time_signature_1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">([ISNULL](#{Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[time_signature]}) || (DT_WSTR,10)#{Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[time_signature]} == "") ? "0/5.0" : [TRIM]([SUBSTRING]((DT_WSTR,10)#{Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[time_signature]},1,2)) + "/5.0"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(ISNULL(time_signature) || (DT_WSTR,10)time_signature == "") ? "0/5.0" : TRIM(SUBSTRING((DT_WSTR,10)time_signature,1,2)) + "/5.0"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\time_signature_1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\time_signature_1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\time_signature_1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\time_signature_1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\time_signature_1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\time_signature_1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="time_signature_confidence &amp; Duration in min &amp; Ensure Null"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Inputs[Derived Column Input].Columns[time_signature_1]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="time_signature_1"
+                      lineageId="Package\Data Flow Task\time_signature_1.Outputs[Derived Column Output].Columns[time_signature_1]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Inputs[Derived Column Input].Columns[duration_ms]"
+                      cachedDataType="r8"
+                      cachedName="duration_ms"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[duration_ms]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Inputs[Derived Column Input].Columns[genre]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="genre"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[genre]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Inputs[Derived Column Input].Columns[artist_name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="artist_name"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[artist_name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Inputs[Derived Column Input].Columns[track_name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="track_name"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[track_name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Inputs[Derived Column Input].Columns[key]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="key"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[key]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Inputs[Derived Column Input].Columns[mode]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="mode"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[mode]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Inputs[Derived Column Input].Columns[Copy of time_signature]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Copy of time_signature"
+                      lineageId="Package\Data Flow Task\time_Signature.Outputs[Data Conversion Output].Columns[Copy of time_signature]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Output].Columns[time_signature_confidence]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Output].Columns[time_signature_confidence]"
+                      name="time_signature_confidence"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\Data Flow Task\time_signature_1.Outputs[Derived Column Output].Columns[time_signature_1]}) || [TRIM](#{Package\Data Flow Task\time_signature_1.Outputs[Derived Column Output].Columns[time_signature_1]}) == "" ? (DT_R4)0.0 : (DT_R4)(DT_I4)[TRIM]([LEFT](#{Package\Data Flow Task\time_signature_1.Outputs[Derived Column Output].Columns[time_signature_1]},[FINDSTRING](#{Package\Data Flow Task\time_signature_1.Outputs[Derived Column Output].Columns[time_signature_1]},"/",1) - 1)) / 5.0</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(time_signature_1) || TRIM(time_signature_1) == "" ? (DT_R4)0.0 : (DT_R4)(DT_I4)TRIM(LEFT(time_signature_1,FINDSTRING(time_signature_1,"/",1) - 1)) / 5.0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Output].Columns[duration]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Output].Columns[duration]"
+                      name="duration"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[duration_ms]} / 60000.0</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">duration_ms / 60000.0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Output].Columns[Genre_New]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Output].Columns[Genre_New]"
+                      name="Genre_New"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[genre]}) ? "Unknown" : #{Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[genre]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(genre) ? "Unknown" : genre</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Output].Columns[Artist_Name_New]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Output].Columns[Artist_Name_New]"
+                      name="Artist_Name_New"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[artist_name]}) ? "Unknown" : #{Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[artist_name]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(artist_name) ? "Unknown" : artist_name</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Output].Columns[Track_Name_New]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Output].Columns[Track_Name_New]"
+                      name="Track_Name_New"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[track_name]}) ? "Unknown" : #{Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[track_name]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(track_name) ? "Unknown" : track_name</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Output].Columns[Key_New]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Output].Columns[Key_New]"
+                      name="Key_New"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[key]}) ? "Unknown" : #{Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[key]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(key) ? "Unknown" : key</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Output].Columns[Mode_New]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Output].Columns[Mode_New]"
+                      name="Mode_New"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[mode]}) ? "Unknown" : #{Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[mode]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(mode) ? "Unknown" : mode</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Output].Columns[Time_Signature_New]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Output].Columns[Time_Signature_New]"
+                      name="Time_Signature_New"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\Data Flow Task\time_Signature.Outputs[Data Conversion Output].Columns[Copy of time_signature]}) ? "Unknown" : #{Package\Data Flow Task\time_Signature.Outputs[Data Conversion Output].Columns[Copy of time_signature]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL([Copy of time_signature]) ? "Unknown" : [Copy of time_signature]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Data Conversion Output]"
+              endId="Package\Data Flow Task\time_signature_1.Inputs[Derived Column Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Task\time_Signature.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\time_signature_1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output1]"
+              endId="Package\Data Flow Task\ODS_Spotify.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Excel Source Output]"
+              endId="Package\Data Flow Task\time_Signature.Inputs[Data Conversion Input]"
+              name="Excel Source Output"
+              startId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate ODS DB"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{CDFF8DA4-1063-4038-BA4C-62AC5EE0B287}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate ODS DB"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{875BBFC5-ADBD-4979-BEBF-47B563605726}"
+          SQLTask:SqlStatementSource="Truncate Table [ODS_Spotify].[dbo].[ODS_Spotify];&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{D69E72DE-52D3-4C56-BCD3-149C15F0CE9F}"
+      DTS:From="Package\Truncate ODS DB"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Data Flow Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="253.571429111216,109.352941080619" />
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Truncate ODS DB"
+          TopLeft="240.714286226703,21.4117646871141" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="324.942857668959,63.0117646871141">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.3411763935045"
+              Start="0,0"
+              End="0,38.8411763935045">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.8411763935045" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="160,41.6"
+          Id="Package\Data Flow Task\time_signature_1"
+          TopLeft="457.8571438318,120.058823424176" />
+        <NodeLayout
+          Size="358.4,41.6"
+          Id="Package\Data Flow Task\time_signature_confidence &amp; Duration in min &amp; Ensure Null"
+          TopLeft="279.047619641638,212.752941069223" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Data Flow Task\time_Signature"
+          TopLeft="266.428571995728,122.607843029784" />
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\Data Flow Task\Excel Source"
+          TopLeft="63.8095239453576,122.098039108663" />
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\Data Flow Task\ODS_Spotify"
+          TopLeft="50.7142858222429,218.188235198936" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Excel Source Output]"
+          TopLeft="202.209523945358,143.152941069223">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="64.2190480503704,0"
+              Start="0,0"
+              End="56.7190480503704,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="56.7190480503704,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output1]"
+          TopLeft="279.047619641638,236.27058813408">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-90.7333338193955,0"
+              Start="0,0"
+              End="-83.2333338193955,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-83.2333338193955,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="537.8571438318,161.658823424176">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-79.6095241901617,51.0941176450478"
+              Start="0,0"
+              End="-79.6095241901617,43.5941176450478">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5470588225239" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.5470588225239"
+                    Point2="0,25.5470588225239"
+                    Point3="-4,25.5470588225239" />
+                  <mssgle:LineSegment
+                    End="-75.6095241901617,25.5470588225239" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-75.6095241901617,25.5470588225239"
+                    Point2="-79.6095241901617,25.5470588225239"
+                    Point3="-79.6095241901617,29.5470588225239" />
+                  <mssgle:LineSegment
+                    End="-79.6095241901617,43.5941176450478" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Data Conversion Output]"
+          TopLeft="416.028571995728,142.13333322698">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="41.8285718360721,0"
+              Start="0,0"
+              End="34.3285718360721,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="34.3285718360721,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\ODS_Spotify">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

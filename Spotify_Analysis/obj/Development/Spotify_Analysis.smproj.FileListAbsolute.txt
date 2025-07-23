@@ -1,0 +1,8 @@
+D:\GBG\Spotify DWH\Spotify_Analysis\bin\Model.asdatabase
+D:\GBG\Spotify DWH\Spotify_Analysis\bin\Model.deploymenttargets
+D:\GBG\Spotify DWH\Spotify_Analysis\bin\Model.deploymentoptions
+D:\GBG\Spotify DWH\Spotify_Analysis\obj\Development\Spotify_Analysis.smproj.AssemblyReference.cache
+D:\GBG\Spotify DWH\Spotify_Analysis\obj\Development\Spotify_Analysis.smproj.CoreCompileInputs.cache
+D:\GBG\Spotify DWH\Spotify_Analysis\obj\Development\Model.asdatabase
+D:\GBG\Spotify DWH\Spotify_Analysis\obj\Development\Model.deploymentoptions
+D:\GBG\Spotify DWH\Spotify_Analysis\obj\Development\Model.deploymenttargets
