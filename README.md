@@ -18,7 +18,7 @@ The goal is to design an end-to-end **Data Warehouse and Analysis System** capab
 | Component | Technology |
 |----------|-------------|
 | ETL      | SQL Server Integration Services (SSIS) |
-| DWH      | SQL Server 2019 |
+| DWH      | SQL Server 2022 |
 | Cube     | SQL Server Analysis Services (SSAS Tabular) |
 | Visualization | Power BI |
 | Scripting | T-SQL, DAX |
